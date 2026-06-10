@@ -1,37 +1,9 @@
-import imgsrc from './assets/react-core-concepts.png'
-import compimgsrc from './assets/components.png';
 import { CORE_CONCEPTS } from './data.js'
+import CoreConcept from './components/CoreConcept.jsx';
+import Header from './components/Header/Header.jsx';
+import TabButton from './components/TabButton.jsx';
 
-
-const desc = ['core', 'fundamental', 'cirtical'];
-
-function genRandomValue(max) {
-  return Math.floor(Math.random() * (max + 1))
-}
-
-const Header = () => {
-  return (
-    <header>
-      <img src={imgsrc} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {desc[genRandomValue(2)]} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
-
-function CoreConcept(props) {
-  return (
-    <li>
-      <img src={props.image}></img>
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  )
-}
-
+const btn = ['Components', 'Props', 'JSX', 'State']
 function App() {
   return (
     <div>
@@ -45,7 +17,16 @@ function App() {
             ))}
           </ul>
         </section>
-        <h2>Time to get started!</h2>
+        <section id='examples'>
+        <h2>Examples</h2>
+        <menu>
+          {console.log(btn)}
+          
+          {btn.map((ele,index)=>(
+            <TabButton key ={index}>{ele}</TabButton>
+          ))}
+        </menu>
+        </section>
       </main>
     </div>
   );
