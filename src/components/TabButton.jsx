@@ -1,7 +1,10 @@
 import React from 'react'
 
 export default function TabButton(props) {
-  return (
-    <li><button>{props.children}</button></li>
+  function handleClick(){
+
+  }
+    return (
+    <li><button onClick={props.onSelect}>{props.children}</button></li>
   )
 }
